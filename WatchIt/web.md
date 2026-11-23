@@ -12,7 +12,7 @@ Ethan SOULLIAGE, Enzo BONY et Victor ROMEAS
 ## La stack technique
 Node.js + Express, SQLite, HTML/CSS/JS : ce sont les technos vues en cours et on a déjà travaillé avec.
 SQLite tient dans un fichier, donc rien à installer à côté.
-API : Jikan v4 (https://api.jikan.moe/v4), une API non officielle de MyAnimeList, gratuite et sans clé. Elle a les animés et les mangas, manhwas compris.
+API : Tenrai (https://tenrai.org), une API non officielle de MyAnimeList, gratuite et sans clé. Elle a les animés et les mangas, manhwas compris.
 API 2 : MangaUpdates (https://api.mangaupdates.com/v1), gratuite et sans clé pour la lecture. On l'utilise seulement pour les mangas et manhwas en cours, parce qu'elle donne le dernier chapitre sorti alors que Jikan ne le donne pas.
 
 ## Les entités

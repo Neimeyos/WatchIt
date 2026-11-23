@@ -5,15 +5,8 @@
     {
       "idx": 0,
       "version": "6",
-      "when": 1795419148998,
-      "tag": "0000_create_tasks_table",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "6",
-      "when": 1795425055197,
-      "tag": "0001_create_oeuvre_createur_table",
+      "when": 1795440781300,
+      "tag": "0000_init",
       "breakpoints": true
     }
   ]

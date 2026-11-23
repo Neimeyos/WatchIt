@@ -1,2 +1,4 @@
 /WatchList/node_modules
-package-lock.json
+
+# Chaque membre a sa propre base : elle se recrée avec "npx drizzle-kit migrate" puis "npm start" (seed)
+/WatchList/db/database.db
