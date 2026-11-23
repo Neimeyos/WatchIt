@@ -89,6 +89,7 @@ On garde le fait qu'une oeuvre peut ne pas avoir de franchise : le prof a dit qu
 
 - Pour l'affichage du nombre de chapitres, est-ce que c'est bon ?
 On conserve l'affichage actuel des chapitres. On peut aussi ajouter un 2e affichage pour les oeuvres dont les API ne donnent pas le nombre de chapitres : on y met le nombre de chapitres de l'utilisateur qui est le plus avancé (il faut bien préciser que c'est une info non officielle si on implémente cette fonction).
+" On peut mettre quand on a pas le nombre de chapitre le dernier recensé si il est pas a jour ou si il est inconnu "
 
 - Est-ce que la taille du seed convient, ou faut-il l'agrandir ?
 La taille du seed convient, pas de modification à faire.
@@ -96,32 +97,120 @@ La taille du seed convient, pas de modification à faire.
 - Voir la mise en avant
 Le favori fonctionne pour la mise en avant, mais on peut quand même garder la mise en avant avec un compteur (un entier) sur chaque oeuvre : les oeuvres avec le plus grand compteur seront mises en avant sur la page d'accueil. On peut essayer de faire une remise à zéro hebdomadaire ou mensuelle si besoin.
 
-## se mettre d'accord :
+## Mettons nous d'accord.
 
 Il faudrait que l'on voit comment on veut faire le site (nb de pages/disposition etc...) 3 clics max !! 
 
-## disposition
-
-Dans la template : 
-
-
-Accueil : La page principal ou l'on voit les oeuvres qui sont en "trend" cette semaine et on a aussi les dernieres oeuvres que l'on 
-a mis a jour soit même + une rubrique "Recommandations" qui affiche les oeuvres boostées par les utilisateurs.
-
-// Note des administrateurs : L'ancien Page-Profil contenait seulement les oeuvres en favoris, on a pas trouvé ça pertinent d'en faire une page. Mieux vaut faire une option de recherche dans le catalogue perso
+## Le dico du .md :
 // [] = Barre de recherche
 // -- Ce qui est affiché de base sur la page
 // --> possibles affichages
+// *** Lien vers page
 // Tri soit : - historique des vues (genre la plus récente modifiée) OU - La dernière ajoutée dans la liste
+// (?) Hésitation choix cornélien
+// $$$$ Action $$$$
+
+# Arborescence : 
+
+// Note des administrateurs : On ne réécrit pas toutes les arborescences car y'a bcp de répétitions
+
+Accueil
+|__ Profil
+        |__ Catalogue Perso
+                        |__ Page Formulaire Ajout
+                        |__ Accueil
+                        |__ Profil
+        |__ Catalogue
+                    |__ [...]
+        |__ Accueil
+                |__ [...]
+|
+|
+|__ Catalogue Perso
+                |__ [...]
+|
+|__ Catalogue
+        |__ Page Formulaire Ajout
+        |__ Info Oeuvre
+                    |__ Info Createur
+                    |__ Info Franchise (si y'a)
+        |__ Accueil
+
+Si tu as des modifs tu peux nous en parler on va pas te manger. On a jamais mangé personne (pas encore)
+
+
+# Template : 
+Dans la template : 
+
+# Page-Accueil : 
+La page principal ou l'on voit les oeuvres qui sont en "trend" cette semaine et on a aussi les dernieres oeuvres que l'on 
+a mis a jour soit même + une rubrique "Recommandations" qui affiche les oeuvres boostées par les utilisateurs.
+
+*** Lien vers "Page-Catalogue-Perso"
+*** Lien vers "Page-Profil"
+
+-- Le top 10 (les plus connus)
+-- Rubrique Les oeuvres du mois (Tedances)
+(?) -- Les sorties de cette semaines
+-- Rubrique Pépite (recommandations de la commu)
+
+
+# Page-Catalogue-Perso : 
+Une page ou l'on peut voir ses oeuvres en cours avec une option de tri et de recherche. + oeuvres mises en favoris
+
+// Note des administrateurs : L'ancien Page-Profil contenait seulement les oeuvres en favoris, on a pas trouvé ça pertinent d'en faire une page. Mieux vaut faire une option de recherche dans le catalogue perso
 
 [Recherche avec les filtres]
 -- Oeuvre Favoris
--- Oeuvres
+-- Toutes les oeuvres que l'on a ajouté à la liste
     --> Oeuvres en cours de visionnage
     --> Oeuvre à commencer
     --> Oeuvres terminées
-![alt text](image.png)
 
-Page-Catalogue-Perso : Une page ou l'on peut voir ses oeuvres en cours avec une option de tri et de recherche. + oeuvres mises en favoris
+# Page-Catalogue : 
+Une page pour faire des recherches d'oeuvres avec pas mal d'option de tri (genre/nbChap/nbEpisode....).
 
-Page-Recherche : Une page pour faire des recherches d'oeuvres avec pas mal d'option de tri (genre/nbChap/nbEpisode....).
+[Recherche avec les filtres]
+-- Toutes les oeuvres
+
+// Note des administrateurs : Choix de l'affichage et de l'organisation de cette page reste encore floue, voici 3 possibilités (si tu comprends pas envoie nous un msg)
+
+1. Liste alphabétique de toutes les oeuvres tout type confondu
+2. 3 Listes alphabétiques de toutes les oeuvres en fonction de leur type
+3. Juste une page d'ajout avec selection
+
+# Page-Profil : 
+Informations sur l'utilisateur 
+
+-- Ses infos 
+-- mdp, email
+*** Lien vers "Page-Catalogue-Perso"
+*** Lien vers "Page-Catalogue"
+
+# Page-Info-Createur : 
+Informations sur le créateur 
+
+-- Ses infos 
+-- Liste de ses oeuvres 
+*** Lien vers l'oeuvre séléctionnée
+
+# Page-Info-Franchise : 
+Informations sur la franchise 
+
+# Page-Formulaire-Ajout :
+Page qui permet d'ajouter une oeuvre a la watchList
+
+# Page-Info-Oeuvre : 
+
+Informations sur l'oeuvre
+
+-- titre, description, annee_sortie, statut
+-- type (anime / manga / manhwa), note_moyenne 
+$$$$ mises en avant (mettre en favoris ou alors recommander à la populace) $$$$
+*** Lien vers createur 
+*** Lien vers franchise
+
+# Exigences complètes : 
+D1, D2, D3, D4
+F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12, F13, F14
+N1, N2, N3, N4 à confirmer
